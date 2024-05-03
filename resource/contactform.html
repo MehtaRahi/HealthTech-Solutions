@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contactform.css">
+</head>
+<body>
+    <section class="contactus">
+        <div class="row">
+            <h3>WE'RE HAPPY TO HEAR FROM YOU</h3>
+        </div>
+        <div class="row">
+            <form method="post" action="#" class="contact-form">
+                <div class="row">
+                    <div class="cols">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your name" required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="cols">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Your email" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cols">
+                        <label for="find-us">How did you find us?</label>
+                    
+                        <select name="find-us" id="find-us">
+                            <option value="friends" selected>Friends</option>
+                            <option value="family">Family</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="news">News</option>
+                            <option value="ad">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="cols ">
+                        <label for="news">Newsletter?</label>
+                        <input type="checkbox" name="news" id="news" checked> Yes, please
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="cols">
+                        <label>Anything you'd like to tell us?</label>
+                        <textarea name="message" placeholder="Your message"></textarea>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="cols">
+                        <label>&nbsp;</label>
+                        <input type="submit" value=" Submit ">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

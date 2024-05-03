@@ -1,0 +1,11 @@
+.row {
+	max-width: 1140px; 
+	margin: 0 auto; 
+    padding: 5px;
+    align-items: center;
+}
+
+.contactus{
+    width: 100%;
+    background-color: grey;
+}

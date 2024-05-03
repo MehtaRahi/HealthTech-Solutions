@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="Telemedicine.css">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <object type="text/html" data="../resource/nav.html" class="top"></object>
+           <a href="../index.html" target="_blank"> <img src="../resource/image/logo.png" alt="" class="logo"></a>
+        </div>
+        <div class="text-box">
+            <h1>Health-Tech Solutions</h1>
+            <h2>PLease ensure that you do not ignore your symptoms at any time. ALso make sure to see a actual doctor as soon as possible</h2>
+        </div>
+    </header>
+
+    <div class="Analysis-form">
+        <form action="#" method="post">
+            <div class="row">
+                <Label for="age">Enter your Age</Label>
+                <input type="number" name="age" id="age" placeholder="Your Age" required min="1" max="100" class="span">
+            </div>
+            <div class="row">
+                <label for="symptom1">Fever</label>
+                <input type="checkbox" id="symptom1" name="symptom1" class="span">
+            </div>
+            <div class="row">
+                <label for="symptom2">Cold</label>
+                <input type="checkbox" id="symptom2" name="symptom2" class="span">
+            </div>
+            <div class="row">
+                <label for="symptom3">High Blood pressure</label>
+                <input type="checkbox" id="symptom3" name="symptom3" class="span">
+            </div>
+            <div class="row">
+                <label for="symptom4">High Blood Sugar level</label>
+                <input type="checkbox" id="symptom4" name="symptom4" class="span">
+
+            </div>
+            <div class="row">
+                <label for="symptom4">Low Blood Sugar level</label>
+                <input type="checkbox" id="symptom4" name="symptom5" class="span">
+
+            </div>
+            <div class="row">
+                <label for="symptom5">HeadAche</label>
+                <input type="checkbox" id="symptom5" name="symptom6" class="span">
+            </div>
+            <div class="row">
+                <label for="symptom6">BodyAche</label>
+                <input type="checkbox" id="symptom6" name="symptom7" class="span">
+            </div>
+            <div class="row">
+                <button type="submit" onclick="Telemedicine()">submit</button>
+            </div>
+            <div class="row">
+                <button onclick="window.location.reload()">clear</button>
+            </div>
+        </form>
+    </div>
+    <div class="output">
+        <h1 >Telemedicine: </h1>
+        <div class="article">
+            <h2 id="oh1"> </h2>
+            <p id="o11" class="para"></p>
+            <p id="o12" class="para"></p>   
+        </div>
+        <div class="article">
+            <h2 id="oh2"> </h2>
+            <p id="o21" class="para"></p>
+            <p id="o22" class="para"></p>
+        </div>
+        <div class="article">
+            <h2 id="oh3"> </h2>
+            <p id="o31" class="para"></p>
+            <p id="o32" class="para"></p>
+        </div>
+        <div class="article">
+            <h2 id="oh4"> </h2>
+            <p id="o41" class="para"></p>
+            <p id="o42" class="para"></p>
+        </div>
+        <div class="article">
+            <h2 id="oh5"> </h2>
+            <p id="o51" class="para"></p>
+            <p id="o52" class="para"></p>
+        </div>
+        <div class="article">
+            <h2 id="oh6"> </h2>
+            <p id="o61" class="para"></p>
+            <p id="o62" class="para"></p>
+        </div>
+        <div class="article">
+            <h2 id="oh7"> </h2> 
+            <p id="o71" class="para"></p>
+            <p id="o72" class="para"></p>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fd = new FormData(form);
+
+            const obj = Object.fromEntries(fd);
+            console.log(obj);
+})
+
+        
+
+        function Telemedicine(){
+            
+            var in1 = document.getElementById("symptom1");
+
+            if(in1.checked)
+            {
+
+                const ho1 = 'For Fever:-'
+
+                document.getElementById("oh1").innerHTML = ho1;
+
+
+                const out11 = ` Rest: Get plenty of rest, ideally in bed. Your body needs energy to fight off the underlying illness.
+                                Hydration: Drink plenty of fluids, especially water, to avoid dehydration. Aim for clear or light-colored urine.
+                                Medication: You can take over-the-counter medications like acetaminophen (paracetamol) or ibuprofen to help bring down your fever. Be sure to follow the dosage instructions carefully.`
+
+                document.getElementById("o11").innerHTML = out11;
+
+                const out12 = `Seek medical attention if you experience:
+
+                High fever: A temperature of 103°F (39.4°C) or higher for adults or 100.4°F (38°C) or higher for infants and children under 3 months old.
+                Persistent fever: A fever that lasts for more than 3 days in adults or more than 1 day in children.
+                Other concerning symptoms: These include severe headache, stiff neck, confusion, rash, shortness of breath, persistent vomiting, abdominal pain, or seizures.
+                Underlying medical conditions: If you have a weakened immune system or a chronic health condition, it's best to consult your doctor even with a low fever.`
+
+                document.getElementById("o12").innerHTML = out12;
+
+
+            }
+
+            var in2 = document.getElementById("symptom2");
+
+            if(in2.checked)
+            {
+                const ho2 = 'For Cold:-'
+
+                document.getElementById("oh2").innerHTML = ho2;
+
+
+                const out21 = ` Rest: This is crucial for your body to fight off the virus. Prioritize sleep and take breaks throughout the day.
+                                Hydration: Drink plenty of fluids like water, clear broth, or warm lemon water. This helps thin mucus and prevent dehydration. Avoid caffeine and alcohol, which can dehydrate you further.
+                                Soothing Sore Throat: Gargle with warm salt water (1/4 to 1/2 teaspoon salt in 8 oz warm water) several times a day. Honey (for adults and children over 1 year old) in warm tea can also be soothing.
+                                Decongestants: Can help open up nasal passages and relieve congestion.
+                                Antihistamines: May help with runny nose and sneezing if allergies are contributing.
+                                Pain Relievers: Acetaminophen or ibuprofen can help manage headaches, muscle aches, and fever.`
+
+                document.getElementById("o21").innerHTML = out21;
+
+                const out22 = ` When to See a Doctor:
+
+                                Symptoms persist for more than a week: This could indicate a secondary infection like sinusitis.
+                                High fever (over 103°F for adults or 100.4°F for children under 3 months): Seek medical attention.
+                                Severe symptoms: Difficulty breathing, persistent vomiting, or severe headache might warrant a doctor's visit.
+                                Underlying health conditions: If you have a weakened immune system or chronic health issues, consult your doctor even with mild symptoms.`
+
+                document.getElementById("o22").innerHTML = out22;
+            }
+
+            var in3 = document.getElementById("symptom3");
+
+            if(in3.checked)
+            {
+                const ho3 = 'For High Blood Pressure:-'
+
+                document.getElementById("oh3").innerHTML = ho3;
+
+
+                const out31 = ` Healthy Diet: Adopt a healthy diet, such as the DASH diet, rich in fruits, vegetables, whole grains, and low-fat dairy products. Limit saturated and unhealthy fats, processed foods, and added sugars.
+                                Sodium Restriction: Reduce your salt intake to less than 1,500 milligrams (mg) per day. This involves reading food labels, cooking more meals at home, and using herbs and spices for flavor instead of salt.
+                                Weight Management: Maintain a healthy weight. Losing excess weight can significantly lower blood pressure.
+                                Regular Exercise: Aim for at least 150 minutes of moderate-intensity physical activity per week. This can include brisk walking, swimming, cycling, or other aerobic activities.
+                                Alcohol Moderation: Limit alcohol consumption. For women, no more than one drink per day, and for men, no more than two drinks per day are recommended.
+                                Stress Management: Find healthy ways to manage stress, such as yoga, meditation, or deep breathing exercises.`
+
+                document.getElementById("o31").innerHTML = out31;
+
+                const out32 = ` Seek medical attention if you experience:    
+
+                                If your blood pressure is higher than 180/120 mmHg, this is considered a hypertensive emergency and requires immediate medical attention.
+                                Consult your doctor: In many cases, lifestyle changes alone may not be enough to control high blood pressure. Your doctor may prescribe medication to help manage your blood pressure effectively.
+                                Adherence to medication: It's crucial to take your medication as prescribed by your doctor, even if you feel well.`
+
+                document.getElementById("o32").innerHTML = out32;
+
+            }
+
+            var in4 = document.getElementById("symptom4");
+
+            if(in4.checked)
+            {
+                const ho4 = 'For High Blood Sugar Level:-'
+
+                document.getElementById("oh4").innerHTML = ho4;
+
+
+                const out41 = ` Monitor Blood Sugar: Regularly checking your blood sugar levels helps you understand your body's response and adjust your management plan accordingly.
+                                Dietary Changes: Adopt a diet low in refined carbohydrates and sugary drinks. Focus on whole foods like fruits, vegetables, whole grains, and lean protein.
+                                Hydration: Drink plenty of water throughout the day to stay hydrated and help your body flush out excess sugar through urine.
+                                Exercise: Regular physical activity improves insulin sensitivity and helps your body utilize blood sugar effectively. Aim for at least 150 minutes of moderate-intensity exercise per week.
+                                Medications: If you have diabetes, follow your doctor's prescribed medication regimen, including insulin if necessary.`
+
+                document.getElementById("o41").innerHTML = out41;
+
+                const out42 = ` Seek medical attention if you experience:    
+
+                                Severe Symptoms: If you experience any of the following severe symptoms, seek immediate medical help or call emergency services:
+                                Ongoing diarrhea or vomiting, making it impossible to keep fluids down.
+                                Blood sugar levels consistently above 240 mg/dL (13.3 mmol/L) along with symptoms of ketones in your urine (fruity-smelling breath, nausea, abdominal pain). This could indicate diabetic ketoacidosis (DKA), a life-threatening complication.
+                                Persistent High Blood Sugar: If your blood sugar levels remain consistently above your target range despite following your management plan, consult your doctor. They may need to adjust your medication or treatment approach.
+                                Changes in Health: Sudden changes in your health, even if seemingly unrelated to blood sugar, can be a sign of underlying issues. These include:
+                                Lightheadedness upon standing
+                                Constipation, bloating, or nausea
+                                Vision problems (especially at night)
+                                Sexual dysfunction
+                                Skin problems or persistent infections
+                                Illness with fever, chills, or vomiting`
+
+                document.getElementById("o42").innerHTML = out42;
+            
+            }
+
+            var in5 = document.getElementById("symptom5");
+
+            if(in5.checked)
+            {
+                const ho5 = 'For Low Blood Sugar Level:-'
+
+                document.getElementById("oh5").innerHTML = ho5;
+
+
+                const out51 = ` Manage Diabetes: If you have diabetes, follow your doctor's recommended treatment plan, including medication adjustments if needed.
+                                Regular Meals and Snacks: Eat regular meals and snacks throughout the day to maintain consistent blood sugar levels.
+                                Monitor Blood Sugar: Regularly monitor your blood sugar levels according to your doctor's instructions.
+                                Avoid Excessive Sugar Intake: Limit sugary drinks and processed foods, which can cause blood sugar spikes and crashes.
+                                Eat a Balanced Meal or Snack: Once your blood sugar is back in range, eat a balanced meal or snack containing complex carbohydrates, protein, and healthy fats. This helps prevent another episode of low blood sugar.`
+
+                document.getElementById("o51").innerHTML = out51;
+
+                const out52 = ` Seek medical attention if you experience:    
+
+                                Severe Symptoms: If you experience any of the following severe symptoms, seek immediate medical help or call emergency services:
+                                Loss of consciousness: If the person is unconscious or cannot swallow.
+                                Confusion or seizures: This indicates a critical drop in blood sugar and requires immediate intervention.
+                                Seizures: Uncontrolled muscle movements due to severely low blood sugar.
+                                Repeated Episodes of Low Blood Sugar: If you experience frequent episodes of low blood sugar, even if not severe, consult your doctor. This helps identify potential causes and adjust your management plan to prevent future occurrences.
+                                Difficulty Managing Blood Sugar: If you find it challenging to manage your blood sugar levels despite following your prescribed treatment plan, consult your doctor for potential adjustments.
+                                Changes in Health: Sudden changes in your health, even if seemingly unrelated to blood sugar, can be a sign of underlying issues. These include:
+                                Lightheadedness upon standing
+                                Constipation, bloating, or nausea
+                                Vision problems (especially at night)
+                                Sexual dysfunction
+                                Skin problems or persistent infections
+                                Illness with fever, chills, or vomiting`
+
+                document.getElementById("o52").innerHTML = out52;
+            }
+
+            var in6 = document.getElementById("symptom6");
+
+            if(in6.checked)
+            {
+                const ho6 = 'For HeadAche :-'
+
+                document.getElementById("oh6").innerHTML = ho6;
+
+
+                const out61 = ` Rest: Take a break from activities and rest in a quiet, dark room.
+                                Hydration: Drink plenty of water to stay hydrated, as dehydration can contribute to headaches.
+                                Temperature Therapy:
+                                Apply a cold compress (ice pack wrapped in a towel) to your forehead or neck for a numbing effect.
+                                Alternatively, use a heating pad or hot compress to relax tense muscles.
+                                Pain Relievers: Over-the-counter pain relievers like ibuprofen (Advil, Motrin IB), acetaminophen (Tylenol), or aspirin can help manage pain. Follow dosage instructions carefully.
+                                Relaxation Techniques:
+                                Practice deep breathing exercises or meditation to reduce stress and tension.
+                                Gentle massage of your head and neck muscles may also provide relief.
+                                Caffeine: A small amount of caffeine (coffee, tea) can sometimes constrict blood vessels and alleviate pain, but avoid excessive consumption as it can lead to rebound headaches.`
+
+                document.getElementById("o61").innerHTML = out61;
+
+                const out62 = ` Seek medical attention if you experience:    
+
+                                Severe or persistent headache: Lasting more than a few days or significantly impacting your daily life.
+                                Sudden, severe headache: This could be a sign of a more serious underlying condition.
+                                Headache accompanied by fever, stiff neck, confusion, nausea, vomiting, or vision changes: These symptoms might indicate a more serious medical issue.
+                                Frequent headaches: If you experience headaches more than a few times a month, consult your doctor to rule out any underlying causes and discuss preventive measures.`
+
+                document.getElementById("o62").innerHTML = out62;
+            }
+
+            var in7 = document.getElementById("symptom7");
+
+            if(in7.checked)
+            {
+                const ho7 = 'For BodyAche :-'
+
+                document.getElementById("oh7").innerHTML = ho7;
+
+
+                const out71 = ` Rest: This is crucial for your body to recover and repair itself. Get plenty of sleep and avoid strenuous activity.
+                                Hydration: Dehydration can contribute to muscle aches. Drink plenty of water throughout the day.
+                                Pain Relievers: Over-the-counter pain relievers like ibuprofen (Advil, Motrin IB) or acetaminophen (Tylenol) can help manage pain. Follow dosage instructions carefully.
+                                Heat Therapy: A hot bath, heating pad, or hot water bottle can help relax muscles and ease pain.
+                                Cold Therapy: Applying an ice pack wrapped in a towel can reduce inflammation and numb the area for temporary relief, especially after a workout.
+                                Gentle Stretching: Light stretching and movement can improve blood circulation and reduce muscle stiffness.`
+
+                document.getElementById("o71").innerHTML = out71;
+
+                const out72 = ` Seek medical attention if you experience:    
+
+                                Severe or Persistent Pain: If the body aches are severe, persistent (lasting more than a few days), or interfere with your daily activities, consult your doctor.
+                                Fever or Other Symptoms: Body aches accompanied by fever, chills, nausea, vomiting, joint swelling, or rashes could indicate a more serious underlying condition like the flu, arthritis, or a viral infection.
+                                Sudden Onset: If the body aches develop suddenly and intensely, it might be a sign of an injury or other medical issue.`
+
+                document.getElementById("o72").innerHTML = out72;
+            }
+
+
+        }
+    </script>
+
+<div class="last">
+    <object type="text/html" data="../resource/footer.html" class="f2"></object>
+</div>
+
+
+</body>
+</html>
